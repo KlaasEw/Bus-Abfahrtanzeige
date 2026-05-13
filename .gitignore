@@ -1,0 +1,57 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Generierte Anzeige / Artefakte (Ordner bleibt im Repo über .gitkeep)
+output/*
+!output/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtuelle Umgebungen
+.venv/
+venv/
+ENV/
+env/
+
+# Umgebungsvariablen / Geheimnisse (nicht ins Repo)
+.env
+.env.*
+!.env.example
+
+# Logs & lokale Debug-Dateien
+*.log
+
+# pytest / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Editor / IDE (lokal)
+.idea/
+*.swp
+*.swo
+*~

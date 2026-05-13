@@ -1,0 +1,188 @@
+{
+  "actual": [
+    {
+      "actualRelativeTime": 68,
+      "actualTime": "12:15",
+      "direction": "Wik Kanal",
+      "mixedTime": "1 %UNIT_MIN%",
+      "passageid": "-7638104965466757190",
+      "patternText": "11",
+      "plannedTime": "12:11",
+      "routeId": "1610073983892324359",
+      "status": "PREDICTED",
+      "tripId": "1610077840801028615",
+      "vehicleId": "-7638104967174899991"
+    },
+    {
+      "actualRelativeTime": 428,
+      "actualTime": "12:21",
+      "direction": "Dietrichsdorf",
+      "mixedTime": "7 %UNIT_MIN%",
+      "passageid": "-7638104965466738065",
+      "patternText": "11",
+      "plannedTime": "12:21",
+      "routeId": "1610073983892324359",
+      "status": "PREDICTED",
+      "tripId": "1610077840800991753",
+      "vehicleId": "-7638104967174900301"
+    },
+    {
+      "actualRelativeTime": 908,
+      "actualTime": "12:29",
+      "direction": "Wik Kanal",
+      "mixedTime": "15 %UNIT_MIN%",
+      "passageid": "-7638104965466752844",
+      "patternText": "11",
+      "plannedTime": "12:23",
+      "routeId": "1610073983892324359",
+      "status": "PREDICTED",
+      "tripId": "1610077840800999945",
+      "vehicleId": "-7638104967174900432"
+    },
+    {
+      "actualRelativeTime": 1148,
+      "actualTime": "12:33",
+      "direction": "Dietrichsdorf",
+      "mixedTime": "19 %UNIT_MIN%",
+      "passageid": "-7638104965466733574",
+      "patternText": "11",
+      "plannedTime": "12:33",
+      "routeId": "1610073983892324359",
+      "status": "PREDICTED",
+      "tripId": "1610077840801004041",
+      "vehicleId": "-7638104967174900372"
+    },
+    {
+      "actualRelativeTime": 1208,
+      "actualTime": "12:34",
+      "direction": "Wik",
+      "mixedTime": "20 %UNIT_MIN%",
+      "passageid": "-7638104965466746214",
+      "patternText": "6",
+      "plannedTime": "12:32",
+      "routeId": "1610073983892324356",
+      "status": "PREDICTED",
+      "tripId": "1610077840800942603",
+      "vehicleId": "-7638104967174900249"
+    },
+    {
+      "actualRelativeTime": 1208,
+      "actualTime": "12:34",
+      "direction": "Kiel Hbf",
+      "mixedTime": "20 %UNIT_MIN%",
+      "passageid": "-7638104965466743874",
+      "patternText": "13",
+      "plannedTime": "12:32",
+      "routeId": "1610073983892324382",
+      "status": "PREDICTED",
+      "tripId": "1610077840801049099",
+      "vehicleId": "-7638104967174900081"
+    },
+    {
+      "actualRelativeTime": 1268,
+      "direction": "Wik Kanal",
+      "mixedTime": "12:35",
+      "passageid": "-7638104965466748319",
+      "patternText": "11",
+      "plannedTime": "12:35",
+      "routeId": "1610073983892324359",
+      "status": "PLANNED",
+      "tripId": "1610077840801016328"
+    },
+    {
+      "actualRelativeTime": 1508,
+      "actualTime": "12:39",
+      "direction": "Schilksee",
+      "mixedTime": "25 %UNIT_MIN%",
+      "passageid": "-7638104965466735474",
+      "patternText": "12",
+      "plannedTime": "12:39",
+      "routeId": "1610073983892324353",
+      "status": "PREDICTED",
+      "tripId": "1610077840801069579",
+      "vehicleId": "-7638104967174900283"
+    }
+  ],
+  "directions": [],
+  "firstPassageTime": 1778492632000,
+  "generalAlerts": [],
+  "lastPassageTime": 1778504400000,
+  "old": [
+    {
+      "actualRelativeTime": -112,
+      "direction": "Schilksee",
+      "mixedTime": "0 %UNIT_MIN%",
+      "passageid": "-7638104965466746513",
+      "patternText": "12",
+      "plannedTime": "12:08",
+      "routeId": "1610073983892324353",
+      "status": "DEPARTED",
+      "tripId": "1610077840801073674",
+      "vehicleId": "-7638104967174903628"
+    },
+    {
+      "actualRelativeTime": -52,
+      "direction": "Hassee",
+      "mixedTime": "0 %UNIT_MIN%",
+      "passageid": "-7638104965466740999",
+      "patternText": "6",
+      "plannedTime": "12:13",
+      "routeId": "1610073983892324356",
+      "status": "DEPARTED",
+      "tripId": "1610077840801249803",
+      "vehicleId": "-7638104967174900285"
+    }
+  ],
+  "routes": [
+    {
+      "alerts": [],
+      "authority": "KVG",
+      "directions": [
+        "Herthastraße",
+        "Kolonnenweg"
+      ],
+      "id": "1610073983892324356",
+      "name": "6",
+      "routeType": "bus",
+      "shortName": "6"
+    },
+    {
+      "alerts": [],
+      "authority": "KVG",
+      "directions": [
+        "Pillauer Straße",
+        "Wik, Kanal"
+      ],
+      "id": "1610073983892324359",
+      "name": "11",
+      "routeType": "bus",
+      "shortName": "11"
+    },
+    {
+      "alerts": [],
+      "authority": "KVG",
+      "directions": [
+        "Hauptbahnhof",
+        "Strande"
+      ],
+      "id": "1610073983892324353",
+      "name": "12",
+      "routeType": "bus",
+      "shortName": "12"
+    },
+    {
+      "alerts": [],
+      "authority": "KVG",
+      "directions": [
+        "Hauptbahnhof",
+        "Strande"
+      ],
+      "id": "1610073983892324382",
+      "name": "13",
+      "routeType": "bus",
+      "shortName": "13"
+    }
+  ],
+  "stopName": "Hanssenstraße",
+  "stopShortName": "2191"
+}

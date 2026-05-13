@@ -1,0 +1,19 @@
+[Unit]
+Description=Bus-Abfahrtsanzeige Hanssenstraße (KVG, PNG und E-Ink)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/bus-abfahrtanzeige
+Environment=PYTHONUNBUFFERED=1
+# Pfad zur Waveshare-Library (…/RaspberryPi_JetsonNano/python/lib) anpassen:
+Environment=WSEPD_LIB=/home/pi/e-Paper/RaspberryPi_JetsonNano/python/lib
+ExecStart=/home/pi/bus-abfahrtanzeige/venv/bin/python3 /home/pi/bus-abfahrtanzeige/run_bus_display.py
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
