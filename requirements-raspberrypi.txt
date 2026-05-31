@@ -1,0 +1,5 @@
+# Nur auf dem Raspberry Pi installieren.
+# Zusätzlich per apt (Phase C1): python3-lgpio python3-gpiozero
+# venv mit --system-site-packages anlegen (Phase D3), damit gpiozero/lgpio greifen.
+-r requirements.txt
+spidev>=3.5,<4

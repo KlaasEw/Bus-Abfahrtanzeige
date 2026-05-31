@@ -154,10 +154,11 @@ Alle folgenden Befehle **auf dem Pi per SSH** ausführen.
 ```bash
 sudo apt update
 sudo apt full-upgrade -y
-sudo apt install -y python3-venv python3-pip git fonts-dejavu-core
+sudo apt install -y python3-venv python3-pip git fonts-dejavu-core \
+  python3-lgpio python3-gpiozero python3-spidev
 ```
 
-`fonts-dejavu-core` sorgt für lesbare Schrift im PNG (wie in der Entwicklung vorgesehen).
+`fonts-dejavu-core` sorgt für lesbare Schrift im PNG. **`python3-lgpio`** und **`python3-gpiozero`** braucht die Waveshare-Library für GPIO — auf Raspberry Pi OS (Bookworm und neuer) reicht `pip install gpiozero` allein nicht; ohne `lgpio` fällt gpiozero auf eine veraltete sysfs-Schnittstelle zurück (`NativePinFactoryFallback`, Fehler an `/sys/class/gpio/gpio24/…`).
 
 ### Schritt C2 — Zeitzone und Locale
 
@@ -226,10 +227,24 @@ Es sollten u. a. vorhanden sein: `run.py`, `run_bus_display.py`, `show_eink.py
 
 ```bash
 cd /home/pi/bus-abfahrtanzeige
-python3 -m venv venv
+python3 -m venv --system-site-packages venv
 ./venv/bin/pip install --upgrade pip
-./venv/bin/pip install -r requirements.txt
+./venv/bin/pip install -r requirements-raspberrypi.txt
 ```
+
+`--system-site-packages` ist nötig, damit das venv die per **apt** installierten Pakete **`lgpio`** und **`gpiozero`** sieht (Waveshare `epdconfig.py`). Über pip kommt zusätzlich **`spidev`** (`requirements-raspberrypi.txt`).
+
+**Bereits ein venv ohne `--system-site-packages`?** Einmal neu anlegen:
+
+```bash
+cd /home/pi/bus-abfahrtanzeige
+rm -rf venv
+python3 -m venv --system-site-packages venv
+./venv/bin/pip install --upgrade pip
+./venv/bin/pip install -r requirements-raspberrypi.txt
+```
+
+Falls du zuvor `gpiozero` per pip installiert hast: `./venv/bin/pip uninstall -y gpiozero` (damit die apt-Version mit `lgpio` genutzt wird).
 
 ### Schritt D4 — Busdaten und PNG testen (ohne Display)
 
@@ -379,6 +394,8 @@ Nach einem **Stromausfall** startet der Dienst automatisch (wegen `enable`).
 | `ping raspberrypi.local` schlägt fehl | Hostname im Imager; ggf. direkte IP aus dem Router |
 | `run.py` — API-Fehler | Internet am Pi: `ping -c 3 8.8.8.8`; Firewall im Router |
 | Kein PNG | `output/` beschreibbar; Fehlermeldung in der Konsole |
+| `No module named 'spidev'` | `./venv/bin/pip install -r requirements-raspberrypi.txt` |
+| `NativePinFactoryFallback` / `gpio24` / `Invalid argument` | `sudo apt install python3-lgpio python3-gpiozero`; venv mit `--system-site-packages` neu anlegen (siehe D3); ggf. `pip uninstall gpiozero` |
 | `waveshare_epd nicht gefunden` | `WSEPD_LIB` gesetzt; Pfad zu `…/python/lib` korrekt |
 | Display bleibt weiß | SPI in `raspi-config` aktiv; Verkabelung; richtiges Modul **7,5″ V2** |
 | Schrift sehr klein/unschön | `sudo apt install fonts-dejavu-core` |
